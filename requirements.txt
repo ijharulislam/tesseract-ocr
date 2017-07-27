@@ -1,0 +1,6 @@
+olefile==0.44
+Pillow==4.2.1
+pyocr==0.4.7
+pytesseract==0.1.7
+six==1.10.0
+Wand==0.4.4
