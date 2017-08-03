@@ -9,15 +9,15 @@ print("hello")
 tool = pyocr.get_available_tools()[0]
 lang = tool.get_available_languages()[0]
 print(lang)
-req_image = []
+req_image = ['1.png','2.png']
 final_text = []
 
-image_pdf = Image(filename="./riverridge.pdf", resolution=300)
-image_jpeg = image_pdf.convert('jpeg')
+# image_pdf = Image(filename="./riverridge.pdf", resolution=300)
+# image_jpeg = image_pdf.convert('jpeg')
 
-for img in image_jpeg.sequence:
-    img_page = Image(image=img)
-    req_image.append(img_page.make_blob('jpeg'))
+# for img in image_jpeg.sequence:
+#     img_page = Image(image=img)
+#     req_image.append(img_page.make_blob('jpeg'))
 
 for img in req_image: 
     txt = tool.image_to_string(
@@ -27,4 +27,4 @@ for img in req_image:
     )
     final_text.append(txt)
 
-print(final_text)
+print("Final Text", final_text[2])
